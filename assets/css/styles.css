@@ -40,6 +40,9 @@ body{
     radial-gradient(1200px 600px at 10% -20%, rgba(124,92,255,.18), transparent 60%),
     radial-gradient(1000px 800px at 110% 10%, rgba(63,209,255,.18), transparent 60%),
     linear-gradient(180deg, var(--bg), var(--bg-alt) 60%, var(--bg) 100%);
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-size: auto, auto, 100% 100%;
+  background-attachment: fixed, fixed, fixed;
 }
 
 /* Layout */
@@ -126,7 +129,15 @@ ol.rules{ list-style: none; margin: 0; padding: 0; }
 .small{ font-size: .86rem; color: var(--fg-muted); }
 
 /* Table of Content (ToC) */
-.toc{ display:flex; flex-wrap:wrap; gap:8px; margin:14px 0 8px; }
+.toc{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:14px 0 8px;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+}
 .toc a{
   text-decoration:none; padding:6px 10px;
   border:1px solid var(--border); border-radius:999px;
