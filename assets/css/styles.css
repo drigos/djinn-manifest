@@ -8,6 +8,7 @@
   --fg-muted: #b7b7c7;
   --card: #141421e6;
   --border: #2a2a3a;
+  --hover-surface: rgba(255,255,255,.06);
   --accent: #7c5cff;
   --accent-2: #3fd1ff;
   --shadow: 0 10px 30px rgba(0,0,0,.35);
@@ -25,10 +26,31 @@
     --fg-muted: #4a4a5e;
     --card: #ffffffcc;
     --border: #e6e8f0;
+    --hover-surface: rgba(0,0,0,.06);
     --shadow: 0 12px 32px rgba(46,58,89,.08);
-    --accent:  #5533ff;
-    --accent-2: #0077ff;
   }
+}
+
+:root[data-theme="dark"]{
+  --bg: #0b0b10;
+  --bg-alt: #101017;
+  --fg: #e7e7ec;
+  --fg-muted: #b7b7c7;
+  --card: #141421e6;
+  --border: #2a2a3a;
+  --hover-surface: rgba(255,255,255,.06);
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+:root[data-theme="light"]{
+  --bg: #f6f7fb;
+  --bg-alt: #eef0f6;
+  --fg: #1b1b22;
+  --fg-muted: #4a4a5e;
+  --card: #ffffffcc;
+  --border: #e6e8f0;
+  --hover-surface: rgba(0,0,0,.06);
+  --shadow: 0 12px 32px rgba(46,58,89,.08);
 }
 
 *{ box-sizing: border-box; }
@@ -187,7 +209,8 @@ ol.rules{ list-style: none; margin: 0; padding: 0; }
 .lang__list a[aria-current="page"]{ border:1px dashed var(--border); }
 .lang__list li a:hover,
 .lang__list li a:focus-visible{
-  background: rgba(255,255,255,.06); outline:none;
+  background: var(--hover-surface);
+  outline:none;
 }
 
 .lang__fallback{ margin-top:8px; text-align:right; color:var(--fg-muted); }
@@ -220,30 +243,6 @@ ol.rules{ list-style: none; margin: 0; padding: 0; }
 @media (prefers-color-scheme: light){
   :root:not([data-theme]) .theme__icon-sun{ display:none; }
   :root:not([data-theme]) .theme__icon-moon{ display:inline-block; }
-}
-
-/* Force dark theme when user chooses */
-:root[data-theme="dark"]{
-  --bg: #0b0b10;
-  --bg-alt: #101017;
-  --fg: #e7e7ec;
-  --fg-muted: #b7b7c7;
-  --card: #141421e6;
-  --border: #2a2a3a;
-  --shadow: 0 10px 30px rgba(0,0,0,.35);
-}
-
-/* Force light theme when user chooses */
-:root[data-theme="light"]{
-  --bg: #f6f7fb;
-  --bg-alt: #eef0f6;
-  --fg: #1b1b22;
-  --fg-muted: #4a4a5e;
-  --card: #ffffffcc;
-  --border: #e6e8f0;
-  --shadow: 0 12px 32px rgba(46,58,89,.08);
-  --accent:  #5533ff;
-  --accent-2: #0077ff;
 }
 
 /* Visible focus */
