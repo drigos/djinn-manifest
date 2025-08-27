@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/assets/css/styles.css">
+  <script src="/assets/js/lang.js" defer></script>
 
   <link rel="alternate" hreflang="pt-br" href="https://djinn.martins.icu/pt-br/">
   <link rel="alternate" hreflang="en"    href="https://djinn.martins.icu/en/">
@@ -28,8 +29,8 @@
   <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:locale:alternate" content="es_ES" />
 
-  <meta property="og:image" content="https://images.unsplash.com/20/dusty-sky.JPG?q=80&w=1200&h=630&auto=format&fit=crop&crop=entropy" />
-  <meta property="og:image:secure_url" content="https://images.unsplash.com/20/dusty-sky.JPG?q=80&w=1200&h=630&auto=format&fit=crop&crop=entropy" />
+  <meta property="og:image" content="https://djinn.martins.icu/assets/img/star-night-bg.png" />
+  <meta property="og:image:secure_url" content="https://djinn.martins.icu/assets/img/star-night-bg.png" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -37,7 +38,7 @@
 
   <meta name="twitter:title" content="Manifesto dos Djinns" />
   <meta name="twitter:description" content="Um contrato cósmico entre quem sonha e quem concede — com poder, graça e limites." />
-  <meta name="twitter:image" content="https://images.unsplash.com/20/dusty-sky.JPG?q=80&w=1200&h=630&auto=format&fit=crop&crop=entropy" />
+  <meta name="twitter:image" content="https://djinn.martins.icu/assets/img/star-night-bg.png" />
   <meta name="twitter:site" content="@martindrg" />
   <meta name="twitter:creator" content="@martindrg" />
 
@@ -47,14 +48,44 @@
 <body>
   <main class="wrap">
     <header class="hero">
-      <nav class="lang-switch">
-        <a href="/pt-br/">Português</a> ·
-        <a href="/en/">English</a> ·
-        <a href="/es/">Español</a>
-      </nav>
 
       <h1 class="logo">📜 Manifesto dos <span class="em">Djinns</span></h1>
       <p class="subtitle">Um contrato cósmico entre quem sonha e quem concede — com poder, graça e limites.</p>
+
+      <div class="hero-actions">
+        <nav class="lang" id="langMenu">
+          <button class="lang__button" id="langBtn"
+                  aria-haspopup="listbox" aria-expanded="false"
+                  aria-label="Selecionar idioma">
+            <!-- globe icon -->
+            <svg class="lang__icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm7.5 10a7.5 7.5 0 0 1-1.6 4.6h-3.1c.4-1.2.7-2.8.8-4.6h3.9ZM10.4 16.6H6.1A7.5 7.5 0 0 1 4.5 12h3.9c.1 1.8.4 3.4.8 4.6Zm0-9.2c-.4 1.2-.7 2.8-.8 4.6H5.7a7.5 7.5 0 0 1 3.1-4.6h1.6Zm3.2 0a7.5 7.5 0 0 1 3.1 4.6h-3.9c-.1-1.8-.4-3.4-.8-4.6h1.6Zm-1.6 9.2c-.4-1.2-.7-2.8-.8-4.6h3.9c-.1 1.8-.4 3.4-.8 4.6h-2.3Z"/>
+            </svg>
+            <span class="lang__current">Português</span>
+            <svg class="lang__caret" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 10l5 5 5-5z"/>
+            </svg>
+          </button>
+
+          <ul class="lang__list" id="langList" role="listbox" aria-labelledby="langBtn">
+            <li role="option" data-lang="pt-br" aria-selected="true">
+              <a href="/pt-br/" lang="pt-BR">Português</a>
+            </li>
+            <li role="option" data-lang="en">
+              <a href="/en/" lang="en">English</a>
+            </li>
+            <li role="option" data-lang="es">
+              <a href="/es/" lang="es">Español</a>
+            </li>
+          </ul>
+
+          <noscript>
+            <div class="lang__fallback">
+              <a href="/pt-br/">PT</a> · <a href="/en/">EN</a> · <a href="/es/">ES</a>
+            </div>
+          </noscript>
+        </nav>
+      </div>
 
       <nav class="toc" aria-label="Navegação de regras">
         <a href="#regra-1">Regra 1</a>
