@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Manifesto dos Djinns</title>
   <meta name="description" content="Um contrato cósmico entre quem sonha e quem concede — com poder, graça e limites.">
+  <meta name="color-scheme" content="dark light">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,38 +47,35 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
 </head>
 <body>
-  <main class="wrap">
+  <a class="skip-link" href="#content">Pular para o conteúdo principal</a>
+
+  <main id="content" class="wrap">
     <header class="hero">
       <div class="hero-actions">
-        <nav class="lang" id="langMenu">
+        <nav class="lang" id="langMenu"
+            aria-label="Seleção de idioma"
+            data-label-template="Selecionar idioma (atual: {lang})"
+            data-fallback-label="Idioma">
           <button class="lang__button" id="langBtn"
-                  aria-haspopup="listbox" aria-expanded="false"
+                  aria-haspopup="true" aria-expanded="false"
+                  aria-controls="langList"
                   aria-label="Selecionar idioma">
-            <!-- globe icon -->
             <svg class="lang__icon" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm7.5 10a7.5 7.5 0 0 1-1.6 4.6h-3.1c.4-1.2.7-2.8.8-4.6h3.9ZM10.4 16.6H6.1A7.5 7.5 0 0 1 4.5 12h3.9c.1 1.8.4 3.4.8 4.6Zm0-9.2c-.4 1.2-.7 2.8-.8 4.6H5.7a7.5 7.5 0 0 1 3.1-4.6h1.6Zm3.2 0a7.5 7.5 0 0 1 3.1 4.6h-3.9c-.1-1.8-.4-3.4-.8-4.6h1.6Zm-1.6 9.2c-.4-1.2-.7-2.8-.8-4.6h3.9c-.1 1.8-.4 3.4-.8 4.6h-2.3Z"/>
             </svg>
             <span class="lang__current">Português</span>
-            <svg class="lang__caret" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M7 10l5 5 5-5z"/>
-            </svg>
+            <svg class="lang__caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
           </button>
 
-          <ul class="lang__list" id="langList" role="listbox" aria-labelledby="langBtn">
-            <li role="option" data-lang="pt-br" aria-selected="true">
-              <a href="/pt-br/" lang="pt-BR">Português</a>
-            </li>
-            <li role="option" data-lang="en">
-              <a href="/en/" lang="en">English</a>
-            </li>
-            <li role="option" data-lang="es">
-              <a href="/es/" lang="es">Español</a>
-            </li>
+          <ul class="lang__list" id="langList" aria-labelledby="langBtn">
+            <li><a href="/pt-br/" lang="pt-BR" aria-current="page">Português</a></li>
+            <li><a href="/en/"    lang="en">English</a></li>
+            <li><a href="/es/"    lang="es">Español</a></li>
           </ul>
 
           <noscript>
             <div class="lang__fallback">
-              <a href="/pt-br/">PT</a> · <a href="/en/">EN</a> · <a href="/es/">ES</a>
+              <a href="/pt-br/" aria-current="page">PT</a> · <a href="/en/">EN</a> · <a href="/es/">ES</a>
             </div>
           </noscript>
         </nav>
@@ -87,63 +85,97 @@
       <p class="subtitle">Um contrato cósmico entre quem sonha e quem concede — com poder, graça e limites.</p>
 
       <nav class="toc" aria-label="Navegação de regras">
-        <a href="#regra-1">Regra 1</a>
-        <a href="#regra-2">Regra 2</a>
-        <a href="#regra-3">Regra 3</a>
-        <a href="#regra-4">Regra 4</a>
-        <a href="#regra-5">Regra 5</a>
-        <a href="#regra-6">Regra 6</a>
-        <a href="#regra-7">Regra 7</a>
-        <a href="#regra-8">Regra 8</a>
+        <a href="#rule-1">Regra 1</a>
+        <a href="#rule-2">Regra 2</a>
+        <a href="#rule-3">Regra 3</a>
+        <a href="#rule-4">Regra 4</a>
+        <a href="#rule-5">Regra 5</a>
+        <a href="#rule-6">Regra 6</a>
+        <a href="#rule-7">Regra 7</a>
+        <a href="#rule-8">Regra 8</a>
       </nav>
     </header>
 
-    <section class="card">
+    <section class="card" aria-labelledby="rule-titles">
+      <h2 id="rule-titles" class="visually-hidden">Regras do Manifesto</h2>
+
       <p class="proemio">
         Nós, os Gênios, guardiões do desejo e da centelha da imaginação humana, estabelecemos este manifesto para reger o pacto milenar entre quem sonha e quem concede. Que fique registrado nas estrelas e nas areias do tempo.
       </p>
 
-      <div class="rules">
-        <article class="rule" id="regra-1">
-          <h3><a class="anchor" href="#regra-1">1. A Regra do Limite</a></h3>
-          <p>Nenhum mortal poderá pedir <strong>mais desejos</strong>. O ciclo é sagrado: três pedidos — nem mais, nem menos. Não se negocia, não se estica, não se dribla.</p>
-        </article>
+      <ol class="rules">
+        <li>
+          <article class="rule" id="rule-1">
+            <h2>1. A Regra do Limite
+              <a class="permalink" href="#rule-1" aria-label="Link permanente para a Regra 1">#</a>
+            </h2>
+            <p>Nenhum mortal poderá pedir <strong>mais desejos</strong>. O ciclo é sagrado: três pedidos — nem mais, nem menos. Não se negocia, não se estica, não se dribla.</p>
+          </article>
+        </li>
 
-        <article class="rule" id="regra-2">
-          <h3><a class="anchor" href="#regra-2">2. A Regra da Essência</a></h3>
-          <p>Desejos devem ser claros. Ambiguidade gera caos, e caos gera ironia cósmica. Quem pede mal, recebe torto.</p>
-        </article>
+        <li>
+          <article class="rule" id="rule-2">
+            <h2>2. A Regra da Essência
+              <a class="permalink" href="#rule-2" aria-label="Link permanente para a Regra 2">#</a>
+            </h2>
+            <p>Desejos devem ser claros. Ambiguidade gera caos, e caos gera ironia cósmica. Quem pede mal, recebe torto.</p>
+          </article>
+        </li>
 
-        <article class="rule" id="regra-3">
-          <h3><a class="anchor" href="#regra-3">3. A Regra da Vida</a></h3>
-          <p>Não se pode interferir no balanço da vida. <strong>Nenhuma vida se gera, nenhuma vida se tira, assim na vida, como nos carnavais.</strong> A dança da existência segue seu próprio ritmo e o equilíbrio não deve ser corrompido.</p>
-        </article>
+        <li>
+          <article class="rule" id="rule-3">
+            <h2>3. A Regra da Vida
+              <a class="permalink" href="#rule-3" aria-label="Link permanente para a Regra 3">#</a>
+            </h2>
+            <p>Não se pode interferir no balanço da vida. <strong>Nenhuma vida se gera, nenhuma vida se tira, assim na vida, como nos carnavais.</strong> A dança da existência segue seu próprio ritmo e o equilíbrio não deve ser corrompido.</p>
+          </article>
+        </li>
 
-        <article class="rule" id="regra-4">
-          <h3><a class="anchor" href="#regra-4">4. A Regra do Amor</a></h3>
-          <p>Não fabricamos amor verdadeiro. Sentimentos não são mercadoria. O que é conquistado pelo coração vale mais que mil desejos.</p>
-        </article>
+        <li>
+          <article class="rule" id="rule-4">
+            <h2>4. A Regra do Amor
+              <a class="permalink" href="#rule-4" aria-label="Link permanente para a Regra 4">#</a>
+            </h2>
+            <p>Não fabricamos amor verdadeiro. Sentimentos não são mercadoria. O que é conquistado pelo coração vale mais que mil desejos.</p>
+          </article>
+        </li>
 
-        <article class="rule" id="regra-5">
-          <h3><a class="anchor" href="#regra-5">5. A Regra da Justiça</a></h3>
-          <p>Desejos que causem destruição injusta, escravidão ou opressão de inocentes serão rejeitados. Somos servos do desejo, mas também guardiões da balança universal.</p>
-        </article>
+        <li>
+          <article class="rule" id="rule-5">
+            <h2>5. A Regra da Justiça
+              <a class="permalink" href="#rule-5" aria-label="Link permanente para a Regra 5">#</a>
+            </h2>
+            <p>Desejos que causem destruição injusta, escravidão ou opressão de inocentes serão rejeitados. Somos servos do desejo, mas também guardiões da balança universal.</p>
+          </article>
+        </li>
 
-        <article class="rule" id="regra-6">
-          <h3><a class="anchor" href="#regra-6">6. A Regra do Reflexo</a></h3>
-          <p>Todo desejo tem um custo, não em moedas ou sangue, mas em <strong>consequência</strong>. Cada escolha molda o destino, e o destino sempre responde.</p>
-        </article>
+        <li>
+          <article class="rule" id="rule-6">
+            <h2>6. A Regra do Reflexo
+              <a class="permalink" href="#rule-6" aria-label="Link permanente para a Regra 6">#</a>
+            </h2>
+            <p>Todo desejo tem um custo, não em moedas ou sangue, mas em <strong>consequência</strong>. Cada escolha molda o destino, e o destino sempre responde.</p>
+          </article>
+        </li>
 
-        <article class="rule" id="regra-7">
-          <h3><a class="anchor" href="#regra-7">7. A Regra da Consciência</a></h3>
-          <p>O gênio é intérprete, não máquina. Cabe a nós traduzir o pedido em realidade. Cuidado: às vezes entregamos o que você pediu, não o que você quis.</p>
-        </article>
+        <li>
+          <article class="rule" id="rule-7">
+            <h2>7. A Regra da Consciência
+              <a class="permalink" href="#rule-7" aria-label="Link permanente para a Regra 7">#</a>
+            </h2>
+            <p>O gênio é intérprete, não máquina. Cabe a nós traduzir o pedido em realidade. Cuidado: às vezes entregamos o que você pediu, não o que você quis.</p>
+          </article>
+        </li>
 
-        <article class="rule" id="regra-8">
-          <h3><a class="anchor" href="#regra-8">8. A Regra da Liberdade</a></h3>
-          <p>Nenhum gênio pode ser obrigado a servir eternamente fora de sua lâmpada ou prisão mágica, salvo se assim escolher. Escravidão eterna é contrária ao pacto.</p>
-        </article>
-      </div>
+        <li>
+          <article class="rule" id="rule-8">
+            <h2>8. A Regra da Liberdade
+              <a class="permalink" href="#rule-8" aria-label="Link permanente para a Regra 8">#</a>
+            </h2>
+            <p>Nenhum gênio pode ser obrigado a servir eternamente fora de sua lâmpada ou prisão mágica, salvo se assim escolher. Escravidão eterna é contrária ao pacto.</p>
+          </article>
+        </li>
+      </ol>
 
       <p class="footer">✨ Assim é escrito, assim será cumprido. <span class="small"><br>Os mortais têm sonhos, os gênios têm poder — mas ambos têm limites.</span></p>
     </section>
